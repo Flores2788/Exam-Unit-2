@@ -18,3 +18,6 @@ function cubeRoot (number) {
 function areaCircle(radius) {
     return Math.PI * square(radius);
 }
+
+const areaofmyball = areaCircle(5);
+console.log(areaofmyball);
