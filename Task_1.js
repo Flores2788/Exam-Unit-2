@@ -14,3 +14,7 @@ function squareRoot (number) {
 function cubeRoot (number) {
     return Math.cbrt(number);
 }
+
+function areaCircle(radius) {
+    return Math.PI * square(radius);
+}
