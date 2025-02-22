@@ -693,3 +693,8 @@ const books =
     }
 ]
 
+function booksStartWThe(){
+    return books.filter(book => book.title.startsWith('The'));
+}
+
+fff

@@ -182,4 +182,4 @@ const result = traverse(nodesTree);
 
 console.log("sum", result.sum);
 console.log("depth", result.depth);
-console.log("count", result.count);
+console.log("count", result.count); 
