@@ -697,4 +697,14 @@ function booksStartWThe(){
     return books.filter(book => book.title.startsWith('The'));
 }
 
-fff
+function booksByAuthorWT(){
+    return books.filter(book => book.author.includes('T'));
+}
+
+function booksAfter1992(){
+    return books.filter(book => book.publication_year > 1992).length;
+}
+
+function booksBefore2004(){
+    return books.filter(book => book.publication_year < 2004).length;
+}
