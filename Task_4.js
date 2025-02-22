@@ -708,3 +708,69 @@ function booksAfter1992(){
 function booksBefore2004(){
     return books.filter(book => book.publication_year < 2004).length;
 }
+
+function isbnByAuthor(authorName) {
+    return books.filter(book => book.author === authorName).map(book => book.isbn);
+}
+
+function listBooksAlphabetically(order = 'ascending') {
+    return books.sort((a, b) => {
+        if (order === 'ascending') {
+            return a.title.localeCompare(b.title);
+        } else {
+            return b.title.localeCompare(a.title);
+        }
+    });
+}
+
+function listBooksChronologically(order = 'ascending') {
+    return books.sort((a, b) => {
+        if (order === 'ascending') {
+            return a.year - b.year;
+        } else {
+            return b.year - a.year;
+        }
+    });
+}
+
+function groupBooksByAuthorLastName() {
+    return books.reduce((acc, book) => {
+        const lastName = book.author.split(' ').slice(-1)[0];
+        if (!acc[lastName]) {
+            acc[lastName] = [];
+        }
+        acc[lastName].push(book);
+        return acc;
+    }, {});
+}
+
+function groupBooksByAuthorFirstName() {
+    return books.reduce((acc, book) => {
+        const firstName = book.author.split(' ')[0];
+        if (!acc[firstName]) {
+            acc[firstName] = [];
+        }
+        acc[firstName].push(book);
+        return acc;
+    }, {});
+}
+
+
+
+
+
+
+
+
+
+console.log('Books starting with "The":', booksStartWThe());
+console.log('Books by authors with "t" in their name:', booksByAuthorWT());
+console.log('Number of books written after 1992:', booksAfter1992());
+console.log('Number of books written before 2004:', booksBefore2004());
+console.log('ISBN numbers of books by a given author:', isbnByAuthor('Author Name'));
+console.log('Books alphabetically ascending:', listBooksAlphabetically('ascending'));
+console.log('Books alphabetically descending:', listBooksAlphabetically('descending'));
+console.log('Books chronologically ascending:', listBooksChronologically('ascending'));
+console.log('Books chronologically descending:', listBooksChronologically('descending'));
+console.log('Books grouped by author last name:', groupBooksByAuthorLastName());
+console.log('Books grouped by author first name:', groupBooksByAuthorFirstName());
