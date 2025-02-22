@@ -21,3 +21,10 @@ function areaCircle(radius) {
 
 const areaofmyball = areaCircle(5);
 console.log(areaofmyball);
+
+function greet(name) {
+    return `Hello ${name}`;
+}
+
+const sayhi = greet('Crismo');
+console.log(sayhi);
