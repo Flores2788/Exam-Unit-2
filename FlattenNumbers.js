@@ -11,10 +11,6 @@ function flattenNumbers(arr){
 return result;
 }
 
-const flattenedArray = flattenNumbers(arrays.json);
-console.log(flattenedArray);
-
-
 
 
 
@@ -74,3 +70,8 @@ const arrays =
     5655,
     4223
   ]
+
+
+
+  const flattenedArrays = flattenNumbers(arrays);
+console.log(flattenedArrays);
